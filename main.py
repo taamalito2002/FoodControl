@@ -1,12 +1,6 @@
-# main.py
-from controlador.main_controller import Controlador
+from app import create_app
 
-def main():
-    # Inicializamos el controlador
-    controlador = Controlador()
-    
-    # Aqui ira el bucle principal y las interacciones del usuario
-    pass  # Por ahora no hacemos nada
+app = create_app()
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)
