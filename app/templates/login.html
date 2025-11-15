@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Iniciar Sesión</title>
+    <title>Iniciar Sesion</title>
 </head>
 <body>
-    <h2>Iniciar Sesión</h2>
-    <form method="POST">
+    <h2>Iniciar Sesion</h2>
+
+    <form action="{{ url_for('login.login') }}" method="POST">
         <input type="text" name="username" placeholder="Usuario" required><br>
-        <input type="password" name="password" placeholder="Contraseña" required><br>
+        <input type="password" name="password" placeholder="Contrasena" required><br>
         <button type="submit">Entrar</button>
     </form>
 
@@ -15,17 +16,21 @@
       {% if messages %}
         <ul>
           {% for category, message in messages %}
-            <li style="color: {{ 'green' if category == 'success' else 'red' }}">{{ message }}</li>
+            <li style="color: {{ 'green' if category == 'success' else 'red' }};">
+              {{ message }}
+            </li>
           {% endfor %}
         </ul>
       {% endif %}
     {% endwith %}
 
     <p>No tienes cuenta? 
-  <a href="{{ url_for('login.register') }}" style="color: #007bff; font-weight: bold; text-decoration: none;">
-    Registrate aqui
-  </a>
-</p>
+      <a href="{{ url_for('login.register') }}">Registrate aqui</a>
+    </p>
+
+    <p>
+      <a href="{{ url_for('login.recover_password') }}">¿Olvidaste tu contraseña?</a>
+    </p>
 
 </body>
 </html>

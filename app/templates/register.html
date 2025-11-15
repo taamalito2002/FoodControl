@@ -5,9 +5,10 @@
 </head>
 <body>
     <h2>Registrar usuario</h2>
+
     <form method="POST">
         <input type="text" name="username" placeholder="Usuario" required><br>
-        <input type="password" name="password" placeholder="Contraseña" required><br>
+        <input type="password" name="password" placeholder="Contrasena" required><br>
         <button type="submit">Registrar</button>
     </form>
 
@@ -21,6 +22,6 @@
       {% endif %}
     {% endwith %}
 
-    <p>¿Ya tienes cuenta? <a href="{{ url_for('login.login') }}">Inicia sesión</a></p>
+    <p>¿Ya tienes cuenta? <a href="{{ url_for('login.login') }}">Inicia sesion</a></p>
 </body>
 </html>
